@@ -92,7 +92,7 @@ a:hover{
   cursor: pointer;
 }
 
-#submit:hover{
+#submit:hover {
   background: rgb(255, 123, 137);
   background: linear-gradient(
     295deg,
