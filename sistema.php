@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+include_once('config.php');
 
     if((!isset ($_SESSION ['email']) == true)  and (!isset ($_SESSION['senha']) == true ))
     {
@@ -10,6 +10,10 @@ session_start();
     }
 
     $logado = $_SESSION['email'];
+
+    $sql = "SELECT * FROM tb_usuarios ORDER BY usuario_id ";
+
+    $result = $conexao->query($sql);
 
 ?>
 
@@ -42,5 +46,48 @@ session_start();
         <?php
             echo "<h1 class = 'white'>Bem vindo <u>$logado</u></h1>";
         ?>
+
+        <div class = "m-5">
+
+        <table class="table text-white table-bg">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Data De Nascimento</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Senha</th>
+                <th scope="col">...</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <?php
+                    while($user_data = mysqli_fetch_assoc($result))
+                    {
+                        echo "<tr>";
+                        echo "<td>".$user_data['usuario_id']."</td>";
+                        echo "<td>".$user_data['nome_usuario']."</td>";
+                        echo "<td>".$user_data['email_usuario']."</td>";
+                        echo "<td>".$user_data['telefone_usuario']."</td>";
+                        echo "<td>".$user_data['sexo_usuario']."</td>";
+                        echo "<td>".$user_data['data_nascimento']."</td>";
+                        echo "<td>".$user_data['estado']."</td>";
+                        echo "<td>".$user_data['cidade']."</td>";
+                        echo "<td>".$user_data['senha_usuario']."</td>";
+                        echo "</tr>";
+                    }
+                ?>
+
+            </tbody>
+
+        </table>
+
+        </div>
     </body>
 </html>
