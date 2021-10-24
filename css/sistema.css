@@ -1,0 +1,17 @@
+body{
+    background: rgb(255, 123, 137);
+    background: linear-gradient(
+      295deg,
+      rgba(255, 123, 137, 1) 0%,
+      rgba(179, 0, 34, 1) 78%);
+      color: white;
+      text-align: center;
+}
+
+.btn{
+    margin: 5px;
+}
+
+.white{
+    color: white;
+}
