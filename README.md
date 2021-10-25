@@ -40,6 +40,15 @@ index.php > cadastro.php > login.php > sistema.php > caso um registro precise se
 <h3> login.php : Caso o Usuario tenha criado um Login o Mesmo consegue acessar <strong>sistema.php</strong> Que permite alterar os registros dos usuarios  </h3> 
 <h3> sistema.php : Lista todos os usuarios do banco de dados já cadastrados </h3> 
 <h3> edit.php : Caso em algum registro seja necessario alteração a pagina de edit.php traz o registro do usuario selecionado via ID </h3> 
+
+<h2 align="center"> 
+	Arquivos de Configuração
+</h2>
+<h3> config.php : Realiza toda a conexão com o banco de dados</h3>
+<h3> sair.php : Toda vez que um usario solicita sair do sistema todos os dados da sessões são limpos,permitindo um novo login</h3>
+<h3> saveEdit.php : Se um usuario estiver logado ele permite editar registros,esse arquivo realiza os updates nos devidos usuarios </h3>
+<h3> testeLogin.php : Realiza as verificações se o usuario esta realmente logado para acessar o sistema,não permite que se caso o usuario não esteja em uma sessão acesse as paginas via URL </h3>
+<h3> Database > Usuarios.sql : Todo o banco de dados criado via MYSQL </h3>
 </p>
 
 
